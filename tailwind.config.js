@@ -20,7 +20,7 @@ export default {
         "custom-280": "280px",
       },
       backgroundImage: {
-        "custom-bg": "url('./bg-img.png')",
+        "custom-bg": "url('/bg-img.png')",
       },
     },
   },
