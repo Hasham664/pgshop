@@ -1,13 +1,12 @@
 import React from 'react'
 import Hero from './Hero'
-import AboutSliders from './AboutSliders'
-import Brands from './Brands'
+import LatestDeals from './LatestDeals'
 
 const Home = () => {
   return (
       <div>
           <Hero />
-          {/* <Brands/> */}
+          {/* <LatestDeals/> */}
     </div>
   )
 }

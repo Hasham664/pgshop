@@ -9,6 +9,7 @@ import "swiper/css/autoplay";
 
 
 import { Pagination, Autoplay } from "swiper/modules";
+import LatestDeals from "./LatestDeals";
 
 const Hero = () => {
   const slider = [
@@ -83,6 +84,7 @@ const Hero = () => {
       <div className="absolute top-2/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-10">
         <AboutSliders />
       </div>
+      
     </div>
   );
 };

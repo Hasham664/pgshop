@@ -3,6 +3,7 @@ import Navbar from './components/Home/Navbar'
 import { Routes, Route } from "react-router-dom";
 import Hero from './components/Home/Hero';
 import Home from './components/Home/Home';
+import LatestDeals from './components/Home/LatestDeals';
 
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
         <Route path="/Australia" element="" />
         {/* dropDown  */}
       </Routes>
-      <Home/>
+      <Home />
     </div>
   );
 }

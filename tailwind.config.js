@@ -15,6 +15,7 @@ export default {
         shadow: "box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25)",
         heading: "rgba(255, 49, 126, 1)",
         brand: "rgba(25, 28, 31, 1)",
+        border2: "rgba(228, 231, 233, 1)",
       },
       borderRadius: {
         "custom-190": "190px",

@@ -9,11 +9,12 @@ import slide5 from "../../assets/slide-5.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+
 import "swiper/css";
 import "swiper/css/navigation";
 
 import { Navigation } from "swiper/modules";
+import LatestDeals from "./LatestDeals";
 
 const Brands = () => {
   const slide = [
@@ -78,12 +79,15 @@ const Brands = () => {
                 <img
                   src={item}
                   alt={item}
-                  className="min-h-20	  w-full m-auto items-center    flex justify-center "
+                  className="	lg:h-[80px] md:h-[80px]  w-full m-auto items-center    flex justify-center "
                 />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
+      <div className="mt-20">
+        <LatestDeals />
       </div>
     </>
   );
