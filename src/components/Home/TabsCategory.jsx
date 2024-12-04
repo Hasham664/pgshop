@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Collection from './Tabs/collection';
+import Collection from './Tabs/Collection';
 import Industry from './Tabs/Industry';
 import Deals from './Tabs/Deals';
 import Recipients from './Tabs/Recipients';
