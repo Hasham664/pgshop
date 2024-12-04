@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ShopNow = () => {
   return (
-    <div className="  w-full absolute lg:px-16 md:px-16 top-[86%]  ">
+    <div className="  w-full  absolute lg:px-16 md:px-16 top-[86%]  ">
       <div className="bg-shop-now bg-center bg-cover w-full mb-12">
         <div className="Mycontainer pb-8">
           <h1 className="lg:text-5xl md:text-5xl text-3xl text-brand font-semibold pt-8">
