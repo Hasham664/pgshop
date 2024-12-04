@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import Hero from './components/Home/Hero';
 import Home from './components/Home/Home';
 import LatestDeals from './components/Home/LatestDeals';
+import ProductDetails from './components/product/ProductDetails';
+import ProducPage from './pages/ProducPage';
 
 
 const App = () => {
@@ -20,6 +22,7 @@ const App = () => {
         <Route path="/Sale" element="" />
         <Route path="/Australia" element="" />
         {/* dropDown  */}
+        <Route path="/product/:id" element={<ProducPage />} />
       </Routes>
       <Home />
     </div>

@@ -16,6 +16,7 @@ export default {
         heading: "rgba(255, 49, 126, 1)",
         brand: "rgba(25, 28, 31, 1)",
         border2: "rgba(228, 231, 233, 1)",
+        icons: "rgba(193, 194, 255, 1)",
       },
       borderRadius: {
         "custom-190": "190px",
@@ -24,6 +25,7 @@ export default {
       backgroundImage: {
         "custom-bg": "url('/bg-img.png')",
       },
+      
     },
   },
   plugins: [],

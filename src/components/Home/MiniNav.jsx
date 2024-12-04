@@ -4,8 +4,10 @@ import { CiHeart } from "react-icons/ci";
 import { BiUser } from "react-icons/bi";
 import { IoIosArrowBack, IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const MiniNav = () => {
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const [isOpen, setIsOpen] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const [isnav, setIsnav] = useState(false);
@@ -59,9 +61,15 @@ const MiniNav = () => {
             <IoSearchSharp className="text-xl text-black" />
           </div>
           <div className="flex items-center gap-6 relative">
-            <p className="absolute right-[75%] top-[-10%] border-2 border-customBlue justify-center flex items-center w-5 h-5 text-xs bg-white text-customBlue rounded-[50%]">
+            {/* <IoCartOutline className="text-2xl" /> */}
+            {totalQuantity > 0 && (
+              <span className="absolute -top-1.5 right-[75%] bg-white border border-brand text-brand text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                {totalQuantity}
+              </span>
+            )}
+            {/* <p className="absolute right-[75%] top-[-10%] border-2 border-customBlue justify-center flex items-center w-5 h-5 text-xs bg-white text-customBlue rounded-[50%]">
               2
-            </p>
+            </p> */}
             <IoCartOutline className=" text-customBlue text-3xl" />
             <CiHeart className="text-3xl text-customBlue" />
             <BiUser className="text-3xl text-customBlue " />
