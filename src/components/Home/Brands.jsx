@@ -75,11 +75,11 @@ const Brands = () => {
         >
           {slide.map((item, ind) => (
             <SwiperSlide key={ind}>
-              <div className="bg-line    px-3   py-2 text-center border rounded-sm shadow-md">
+              <div className="bg-line    px-3   py-3 text-center border rounded-sm shadow-md">
                 <img
                   src={item}
                   alt={item}
-                  className="	lg:h-[80px] md:h-[80px]  w-full m-auto items-center    flex justify-center "
+                  className=" 	lg:h-[90px] md:h-[90px] w-full m-auto items-center    flex justify-center "
                 />
               </div>
             </SwiperSlide>

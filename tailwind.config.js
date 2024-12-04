@@ -17,6 +17,9 @@ export default {
         brand: "rgba(25, 28, 31, 1)",
         border2: "rgba(228, 231, 233, 1)",
         icons: "rgba(193, 194, 255, 1)",
+        borderb: "rgba(223, 222, 222, 1)",
+        bgColor: "rgba(244, 244, 244, 1)",
+        list: "rgba(245, 245, 245, 1)",
       },
       borderRadius: {
         "custom-190": "190px",
@@ -24,8 +27,12 @@ export default {
       },
       backgroundImage: {
         "custom-bg": "url('/bg-img.png')",
+        "pink-color": "url('/pinkcolor.png')",
+        "shop-now" : "url('/bg-pic.png')"
       },
-      
+      screens: {
+        "custom-1282": { max: "1300px" },
+      },
     },
   },
   plugins: [],

@@ -80,9 +80,11 @@ const AboutSliders = () => {
             ))}
           </Swiper>
         </div>
+        <div className="relative">
 
         <div className="absolute right-[0%] left-[0%] mt-16 ">
           <Brands />
+        </div>
         </div>
       </>
     );

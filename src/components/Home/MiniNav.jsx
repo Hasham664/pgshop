@@ -45,11 +45,11 @@ const MiniNav = () => {
     <>
       <div className="bg-line">
         <div className="Mycontainer text-white flex flex-wrap gap-6 items-center justify-between py-6">
-          <div>
+          <Link to={'/'}>
             <h1 className="uppercase text-4xl text-smallHeader font-bold">
               pgshop
             </h1>
-          </div>
+          </Link>
           <div className="flex gap-2 border border-border shadow  items-center bg-white w-[55%] h-[48px] px-4">
             <input
               value={inputValue}
@@ -61,16 +61,15 @@ const MiniNav = () => {
             <IoSearchSharp className="text-xl text-black" />
           </div>
           <div className="flex items-center gap-6 relative">
-            {/* <IoCartOutline className="text-2xl" /> */}
+            <Link to={'/cart'}>
             {totalQuantity > 0 && (
               <span className="absolute -top-1.5 right-[75%] bg-white border border-brand text-brand text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 {totalQuantity}
               </span>
             )}
-            {/* <p className="absolute right-[75%] top-[-10%] border-2 border-customBlue justify-center flex items-center w-5 h-5 text-xs bg-white text-customBlue rounded-[50%]">
-              2
-            </p> */}
+           
             <IoCartOutline className=" text-customBlue text-3xl" />
+            </Link>
             <CiHeart className="text-3xl text-customBlue" />
             <BiUser className="text-3xl text-customBlue " />
           </div>

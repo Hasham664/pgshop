@@ -4,7 +4,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: {
     items: [],
-    totalQuantity: 0, // Tracks the total number of items
+    totalQuantity: 0,
   },
   reducers: {
     addToCart: (state, action) => {
@@ -13,11 +13,11 @@ const cartSlice = createSlice({
       );
 
       if (existingItem) {
-        existingItem.quantity += 1; // Increment quantity if the item exists
+        existingItem.quantity += 1; 
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
       }
-      state.totalQuantity += 1; // Increment the total quantity
+      state.totalQuantity += 1;
     },
     removeFromCart: (state, action) => {
       const existingItem = state.items.find(
