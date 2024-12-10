@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/Australia" element={<div>Australia Page</div>} />
         {/* SHOPPAGE  */}
         <Route path="/category" element={<CategoryPage />} />
-        <Route path="/shop" element={<ShopPage />} />
+        <Route path="/shop" element={ <ShopPage/> } />
       </Routes>
       <Footer />
     </div>
