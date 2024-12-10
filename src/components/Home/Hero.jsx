@@ -9,7 +9,6 @@ import "swiper/css/autoplay";
 
 
 import { Pagination, Autoplay } from "swiper/modules";
-import LatestDeals from "./LatestDeals";
 
 const Hero = () => {
   const slider = [
@@ -47,6 +46,7 @@ const Hero = () => {
         pagination={{
           dynamicBullets: true,
           el: ".custom-pagination",
+          clickable: true,
         }}
         autoplay={{
           delay: 2000,
@@ -58,7 +58,7 @@ const Hero = () => {
         {slider.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
-              className={`${slide.backgroundImage} bg-cover bg-center w-full relative`}
+              className={`${slide.backgroundImage} bg-cover bg-center w-full`}
             >
               <div className="text-line Mycontainer lg:pt-44 md:pt-44 pt-20 pb-40 lg:pb-60 md:pb-60">
                 <div className="flex items-center gap-2 text-sm">
@@ -81,10 +81,10 @@ const Hero = () => {
         ))}
       </Swiper>
 
-      <div className="absolute top-2/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-10">
+      {/* <div className=" custom-pagination mt-5 space-x-2 absolute bottom-[29%] left-14 z-10"></div> */}
+      <div className="lg:absolute md:absolute top-[80%] lg:mt-0 md:mt-0 mt-12 right-0 left-0">
         <AboutSliders />
       </div>
-      
     </div>
   );
 };

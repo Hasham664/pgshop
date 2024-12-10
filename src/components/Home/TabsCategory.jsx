@@ -5,10 +5,12 @@ import Deals from './Tabs/Deals';
 import Recipients from './Tabs/Recipients';
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from 'react-router-dom';
-import Promotional from './Promotional';
+
 
 const TabsCategory = () => {
-    const [activeTab, setActiveTab] = useState("collections");
+
+  const [activeTab, setActiveTab] = useState("collections");
+  
     return (
       <div>
         <div className="bg-bgColor">
@@ -19,7 +21,7 @@ const TabsCategory = () => {
             <div className="  mt-20  justify-between flex gap-6 flex-wrap border-b-4 border-borderb  ">
               <button
                 type="button"
-                className={` py-4 px-4   focus:outline-none text-xl font-normal ${
+                className={` py-4 lg:px-12 md:px-8 sm:px-6 px-4   focus:outline-none text-xl font-normal ${
                   activeTab === "collections"
                     ? "border-b-4 border-smallHeader"
                     : "text-brand"
@@ -30,7 +32,7 @@ const TabsCategory = () => {
               </button>
               <button
                 type="button"
-                className={` py-4 px-4  focus:outline-none text-xl font-normal ${
+                className={` py-4 lg:px-12 md:px-8 sm:px-6 px-4  focus:outline-none text-xl font-normal ${
                   activeTab === "industry"
                     ? "border-b-4 border-smallHeader"
                     : "text-brand"
@@ -41,7 +43,7 @@ const TabsCategory = () => {
               </button>
               <button
                 type="button"
-                className={` py-4 px-4  focus:outline-none text-xl font-normal ${
+                className={` py-4 lg:px-12 md:px-8 sm:px-6 px-4  focus:outline-none text-xl font-normal ${
                   activeTab === "deals"
                     ? "border-b-4 border-smallHeader"
                     : "text-brand"
@@ -52,7 +54,7 @@ const TabsCategory = () => {
               </button>
               <button
                 type="button"
-                className={` py-4 px-4  focus:outline-none text-xl font-normal ${
+                className={` py-4 lg:px-12 md:px-8 sm:px-6 px-4  focus:outline-none text-xl font-normal ${
                   activeTab === "recipients"
                     ? "border-b-4 border-smallHeader"
                     : "text-brand"
@@ -70,7 +72,7 @@ const TabsCategory = () => {
             </div>
 
             <Link
-              to={"/category"}
+              to={"category"}
               className="flex items-center rounded text-base font-bold gap-2 justify-center mt-10 bg-smallHeader text-white w-[200px] m-auto h-[56px]  "
             >
               <button className="uppercase">view morw</button>
@@ -78,7 +80,6 @@ const TabsCategory = () => {
             </Link>
           </div>
         </div>
-          <Promotional />
       </div>
     );
 }

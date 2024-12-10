@@ -1,11 +1,11 @@
 import React from "react";
 import { IoMdArrowForward } from "react-icons/io";
-import deal1 from "../../assets/shirt2.png";
-import deal2 from "../../assets/cap2.png";
-import deal3 from "../../assets/deal1.png";
-import deal4 from "../../assets/deal2.png";
+import deal1 from "../../../assets/shirt2.png";
+import deal2 from "../../../assets/cap2.png";
+import deal3 from "../../../assets/deal1.png";
+import deal4 from "../../../assets/deal2.png";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/slices/cartSlice";
+import { addToCart } from "../../../redux/slices/cartSlice";
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -14,7 +14,7 @@ import {
   HeartIcon,
   CartIcon,
   EyeIcon,
-} from "../Home/Icons";
+} from "../../Home/Icons";
 const products = [
   {
     id: 1,
@@ -88,48 +88,104 @@ const products = [
     button: "Add to cart",
     eye: EyeIcon,
   },
+  {
+    id: 5,
+    img: deal4,
+    off: "32% OFF",
+    hot: "HOT",
+    name: "Custom Shirts & Tops",
+    code: "Code: CB009",
+    price: "From $1.78 to $5.25",
+    stock: "50 Minimum",
+    icon: CursorIcon,
+    free: "Free Delivery",
+    truck: TruckIcon,
+    delivery: "Rush Order",
+    heart: HeartIcon,
+    cart: CartIcon,
+    button: "Add to cart",
+    eye: EyeIcon,
+  },
+  {
+    id: 6,
+    img: deal4,
+    off: "32% OFF",
+    hot: "HOT",
+    name: "Custom Shirts & Tops",
+    code: "Code: CB009",
+    price: "From $1.78 to $5.25",
+    stock: "50 Minimum",
+    icon: CursorIcon,
+    free: "Free Delivery",
+    truck: TruckIcon,
+    delivery: "Rush Order",
+    heart: HeartIcon,
+    cart: CartIcon,
+    button: "Add to cart",
+    eye: EyeIcon,
+  },
+  {
+    id: 7,
+    img: deal4,
+    off: "32% OFF",
+    hot: "HOT",
+    name: "Custom Shirts & Tops",
+    code: "Code: CB009",
+    price: "From $1.78 to $5.25",
+    stock: "50 Minimum",
+    icon: CursorIcon,
+    free: "Free Delivery",
+    truck: TruckIcon,
+    delivery: "Rush Order",
+    heart: HeartIcon,
+    cart: CartIcon,
+    button: "Add to cart",
+    eye: EyeIcon,
+  },
+  {
+    id: 8,
+    img: deal4,
+    off: "32% OFF",
+    hot: "HOT",
+    name: "Custom Shirts & Tops",
+    code: "Code: CB009",
+    price: "From $1.78 to $5.25",
+    stock: "50 Minimum",
+    icon: CursorIcon,
+    free: "Free Delivery",
+    truck: TruckIcon,
+    delivery: "Rush Order",
+    heart: HeartIcon,
+    cart: CartIcon,
+    button: "Add to cart",
+    eye: EyeIcon,
+  },
 ];
+const Stationery = ({ activeTab }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-const LatestDeals = () => {
- const dispatch = useDispatch();
- const navigate = useNavigate();
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+    console.log(`${product.name} added to cart`);
+  };
 
- const handleAddToCart = (product) => {
-   dispatch(addToCart(product)); 
-   console.log(`${product.name} added to cart`);
- };
-
- const handleViewProduct = (productId) => {
-   navigate(`/product/${productId}`); 
- };
-
-    return (
-      <>
+  const handleViewProduct = (productId) => {
+    navigate(`/product/${productId}`);
+  };
+  return (
+    <>
+      {activeTab === "Stationery" && (
         <div className="Mycontainer pb-24">
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <div className="flex flex-wrap items-center gap-4">
-              <h1 className="text-smallHeader text-2xl font-bold">
-                Latest Deals
-              </h1>
-              <p className="text-sm text-black">Deals ends in</p>
-              <p className="bg-heading px-2 py-2 text-white text-base">
-                16d : 21h : 57m : 23s
-              </p>
-            </div>
-            <div className="flex items-center gap-2">
-              <p className="text-sm text-smallHeader">Browse All Product</p>
-              <IoMdArrowForward className="text-smallHeader" />
-            </div>
-          </div>
-          <div className="flex flex-wrap mt-12   gap-4 lg:flex-nowrap custom-1282:flex-wrap justify-center lg:justify-between md:justify-between">
+          <div className="grid max-default:grid-cols-1 gap-5 lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 ">
             {products.map((product) => (
               <div
                 key={product.id}
                 onClick={() => handleViewProduct(product.id)}
-                className="border border-border2 p-6  lg:w-[48%] md:w-[48%] w-full relative "
+                className="border border-border2 p-4   relative "
               >
                 <img src={product.img} alt="" className="w-full" />
-                <div className="absolute top-[2%] left-[5%]">
+                <div className="absolute top-[1.5%] left-[3%]">
                   <p className="bg-heading text-white w-fit px-2 rounded-sm text-xs py-1.5">
                     {product.off}
                   </p>
@@ -186,10 +242,9 @@ const LatestDeals = () => {
             ))}
           </div>
         </div>
-
-        
-      </>
-    );
+      )}
+    </>
+  );
 };
 
-export default LatestDeals;
+export default Stationery;

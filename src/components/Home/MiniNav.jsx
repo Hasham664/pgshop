@@ -5,6 +5,7 @@ import { BiUser } from "react-icons/bi";
 import { IoIosArrowBack, IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { IoPricetagSharp } from "react-icons/io5";
 
 const MiniNav = () => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
@@ -45,12 +46,12 @@ const MiniNav = () => {
     <>
       <div className="bg-line">
         <div className="Mycontainer text-white flex flex-wrap gap-6 items-center justify-between py-6">
-          <Link to={'/'}>
+          <Link to={"/"}>
             <h1 className="uppercase text-4xl text-smallHeader font-bold">
               pgshop
             </h1>
           </Link>
-          <div className="flex gap-2 border border-border shadow  items-center bg-white w-[55%] h-[48px] px-4">
+          <div className="flex gap-2 border border-border shadow  items-center bg-white lg:w-[55%] md:w-[55%] w-full h-[48px] px-4">
             <input
               value={inputValue}
               onChange={handleChange}
@@ -61,14 +62,14 @@ const MiniNav = () => {
             <IoSearchSharp className="text-xl text-black" />
           </div>
           <div className="flex items-center gap-6 relative">
-            <Link to={'/cart'}>
-            {totalQuantity > 0 && (
-              <span className="absolute -top-1.5 right-[75%] bg-white border border-brand text-brand text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {totalQuantity}
-              </span>
-            )}
-           
-            <IoCartOutline className=" text-customBlue text-3xl" />
+            <Link to={"/cart"}>
+              {totalQuantity > 0 && (
+                <span className="absolute -top-1.5 right-[75%] bg-white border border-brand text-brand text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {totalQuantity}
+                </span>
+              )}
+
+              <IoCartOutline className=" text-customBlue text-3xl" />
             </Link>
             <CiHeart className="text-3xl text-customBlue" />
             <BiUser className="text-3xl text-customBlue " />
@@ -139,7 +140,7 @@ const MiniNav = () => {
             <div
               className={`${
                 isnav
-                  ? "block z-10 mt-8 lg:hidden absolute bg-white shadow-lg px-8 md:px-12 py-4 mt-4 right-0 w-[100%] transition-all duration-300 ease-in-out"
+                  ? "block z-10 mt-8 lg:hidden absolute bg-white shadow-lg px-8 md:px-12 py-4 right-0 w-[100%] transition-all duration-300 ease-in-out"
                   : "hidden lg:block"
               }`}
             >
@@ -178,6 +179,19 @@ const MiniNav = () => {
               </ul>
             </div>
           </nav>
+        </div>
+      </div>
+      <div className="bg-shipping py-6">
+        <div className="Mycontainer flex flex-wrap items-center lg:gap-8 md:gap-8 gap-4 justify-center">
+          <h1 className="text-lg text-smallHeader font-medium">
+            20% OFF + FREE Shipping on $150
+          </h1>
+          <div className="flex items-center gap-2 border-2 border-smallHeader px-4 py-2">
+            <IoPricetagSharp className="text-lg font-bold text-smallHeader" />
+            <button className="uppercase text-lg font-bold text-smallHeader">
+              code cyber
+            </button>
+          </div>
         </div>
       </div>
     </>

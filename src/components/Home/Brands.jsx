@@ -5,7 +5,6 @@ import slide1 from "../../assets/slide-1.png";
 import slide2 from "../../assets/slide-2.png";
 import slide3 from "../../assets/slide-3.png";
 import slide4 from "../../assets/slide-4.png";
-import slide5 from "../../assets/slide-5.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,7 +13,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { Navigation } from "swiper/modules";
-import LatestDeals from "./LatestDeals";
 
 const Brands = () => {
   const slide = [
@@ -32,20 +30,20 @@ const Brands = () => {
 
   return (
     <>
-      <div className="Mycontainer relative ">
+      <div className="Mycontainer relative lg:pt-32 md:pt-32 pt-12">
         <div>
           <h1 className="text-brand text-center text-3xl pb-10 font-bold">
             Our Trusted Brands
           </h1>
         </div>
-        <div className="absolute  lg:-left-6 md:-left-6 -left-4 top-[72%] transform -translate-y-1/2 z-10">
-          <button className="custom-prev2 bg-smallHeader text-white p-2 rounded-full">
-            <IoArrowBackOutline size={24} />
+        <div className="absolute  lg:-left-6 md:-left-6 -left-0 lg:top-[83%] md:top-[83%] top-[76%] transform -translate-y-1/2 z-10">
+          <button className="custom-prev2 bg-smallHeader text-white lg:p-2 md:p-2 p-1 rounded-full">
+            <IoArrowBackOutline className="lg:text-2xl md:text-2xl text-lg" />
           </button>
         </div>
-        <div className="absolute  lg:-right-6 md:-right-6 -right-4 top-[72%] transform -translate-y-1/2 z-10">
-          <button className="custom-next2 bg-smallHeader text-white p-2 rounded-full">
-            <IoMdArrowForward size={24} />
+        <div className="absolute  lg:-right-6 md:-right-6 -right-0 lg:top-[83%] md:top-[83%] top-[76%] transform -translate-y-1/2 z-10">
+          <button className="custom-next2 bg-smallHeader text-white lg:p-2 md:p-2 p-1 rounded-full">
+            <IoMdArrowForward className="lg:text-2xl md:text-2xl text-lg" />
           </button>
         </div>
 
@@ -59,7 +57,7 @@ const Brands = () => {
           breakpoints={{
             0: {
               slidesPerView: 1,
-              spaceBetween: 15,
+              spaceBetween: 0,
             },
             400: {
               slidesPerView: 2,
@@ -75,19 +73,16 @@ const Brands = () => {
         >
           {slide.map((item, ind) => (
             <SwiperSlide key={ind}>
-              <div className="bg-line    px-3   py-3 text-center border rounded-sm shadow-md">
+              <div className="bg-line px-3 py-3 flex justify-center text-center ">
                 <img
                   src={item}
                   alt={item}
-                  className=" 	lg:h-[90px] md:h-[90px] w-full m-auto items-center    flex justify-center "
+                  className="w-full "
                 />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-      <div className="mt-20">
-        <LatestDeals />
       </div>
     </>
   );

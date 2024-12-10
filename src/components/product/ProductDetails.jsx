@@ -8,7 +8,7 @@ const ProductDetails = () => {
   return (
     <div className="container">
       <h1 className="text-2xl font-bold">Product Details</h1>
-      <p>Product ID</p>
+      <p>Product ID {id }</p>
       {/* Fetch and display product details here */}
     </div>
   );

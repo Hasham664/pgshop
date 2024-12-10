@@ -17,3 +17,18 @@ body{
   max-width: 1400px;
   margin: auto;
 }
+.Mycontainer2{
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+
+
+@media all and (max-width:768px){
+  .Mycontainer2{
+    width: 100%;
+  }
+}
+
+

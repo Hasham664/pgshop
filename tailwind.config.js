@@ -20,6 +20,9 @@ export default {
         borderb: "rgba(223, 222, 222, 1)",
         bgColor: "rgba(244, 244, 244, 1)",
         list: "rgba(245, 245, 245, 1)",
+        tabsColor: "rgba(95, 108, 114, 1)",
+        shipping: "rgba(240, 246, 255, 1)",
+        footer: "rgba(173, 183, 188, 1)",
       },
       borderRadius: {
         "custom-190": "190px",
@@ -28,10 +31,15 @@ export default {
       backgroundImage: {
         "custom-bg": "url('/bg-img.png')",
         "pink-color": "url('/pinkcolor.png')",
-        "shop-now" : "url('/bg-pic.png')"
+        "shop-now": "url('/bg-pic.png')",
       },
       screens: {
         "custom-1282": { max: "1300px" },
+        "custom-card": { max: "1370px" },
+        "max-md": { max: "1120px" },
+        "max-sm": { max: "950px" },
+        "max-sm2": { max: "870px" },
+        "max-default": { max: "650px" },
       },
     },
   },

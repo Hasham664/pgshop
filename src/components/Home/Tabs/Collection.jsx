@@ -29,8 +29,8 @@ const Collection = ({ activeTab }) => {
         <div className="flex items-center mt-10 lg:flex-nowrap md:flex-wrap flex-wrap lg:justify-between md:justify-around justify-center text-center gap-6 ">
           {tabData.map((item, ind) => {
             return (
-              <div key={ind} className="bg-white p-5">
-                <img src={item.pic} alt="" />
+              <div key={ind} className="bg-white p-5 ">
+                <img src={item.pic} alt="" className="w-full" />
                 <p className="text-brand pt-3 text-lg font-medium">
                   {item.description}
                 </p>

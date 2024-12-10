@@ -1,16 +1,20 @@
 import React from "react";
 import Navbar from "./components/Home/Navbar";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
+import Home from "../src/pages/Home";
 import ProducPage from "./pages/ProducPage";
+import Footer from "./components/Home/Footer";
+import CategoryPage from "./pages/CategoryPage";
+import ShopPage from "./pages/ShopPage";
 
 const App = () => {
+
   return (
     <div>
+    
       <Navbar />
       <Routes>
-        {/* Routes for different pages */}
-        <Route path="/" element={<Home />} /> {/* Home page */}
+        <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProducPage />} />{" "}
         {/* Product details page */}
         {/* Other routes */}
@@ -21,7 +25,11 @@ const App = () => {
         <Route path="/production" element={<div>Production Page</div>} />
         <Route path="/Sale" element={<div>Sale Page</div>} />
         <Route path="/Australia" element={<div>Australia Page</div>} />
+        {/* SHOPPAGE  */}
+        <Route path="/category" element={<CategoryPage />} />
+        <Route path="/shop" element={<ShopPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
