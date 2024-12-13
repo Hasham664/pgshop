@@ -7,10 +7,13 @@ import {
   applyFilters,
 } from "../../redux/slices/filterSlice";
 import PriceFilter from "./PriceFilter";
+import BrandCheckboxes from "./BrandFilter";
+import PopularTags from "./PopularTags";
+import OneCard from "./OneCard";
 
 const Sidebar = () => {
-   const dispatch = useDispatch();
-   const { selectedCategory } = useSelector((state) => state.filters);
+  const dispatch = useDispatch();
+  const { selectedCategory } = useSelector((state) => state.filters);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -75,13 +78,15 @@ const Sidebar = () => {
             : " hidden "
         } `}
       >
-        <div className="">
-          <h1 className="font-bold text-lg mb-4">Category</h1>
+        <div className="border-b-2 pb-6">
+          <h1 className="font-medium text-base mb-4 uppercase text-brand">
+            Category
+          </h1>
           {categories.map((category) => (
             <div
               key={category}
               onClick={() => handleCategoryClick(category)}
-              className="flex items-center gap-2 py-2 cursor-pointer"
+              className="flex items-center gap-2 py-2  cursor-pointer"
             >
               <div
                 className={`w-6 h-6 flex justify-center rounded-full ${
@@ -92,13 +97,15 @@ const Sidebar = () => {
               >
                 <div className="bg-white w-2 h-2 rounded-full m-auto"></div>
               </div>
-              <p>{category}</p>
+              <p className="text-category text-sm font-normal">{category}</p>
             </div>
           ))}
         </div>
         <div className="mt-4">
-          <h1 className="font-bold text-lg mb-2">Price Filter</h1>
-          <PriceFilter/>
+          <PriceFilter />
+          <BrandCheckboxes />
+          <PopularTags />
+          <OneCard />
         </div>
       </div>
     </div>

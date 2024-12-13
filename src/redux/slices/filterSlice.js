@@ -15,6 +15,8 @@ import {
 const products = [
   {
     id: 1,
+    count: 10,
+    brand: "Apple",
     category: "headwear",
     img: deal1,
     off: "32% OFF",
@@ -34,6 +36,7 @@ const products = [
   },
   {
     id: 2,
+    brand: "Microsoft",
     category: "promotion",
     img: deal2,
     off: "32% OFF",
@@ -53,6 +56,7 @@ const products = [
   },
   {
     id: 3,
+    brand: "Symphony",
     category: "clothing",
     img: deal3,
     off: "32% OFF",
@@ -72,6 +76,7 @@ const products = [
   },
   {
     id: 4,
+    brand: "Dell",
     category: "promotion2",
     img: deal4,
     off: "32% OFF",
@@ -91,6 +96,7 @@ const products = [
   },
   {
     id: 5,
+    brand: "Sony",
     category: "headwear2",
     img: deal1,
     off: "32% OFF",
@@ -110,6 +116,7 @@ const products = [
   },
   {
     id: 6,
+    brand: "LG",
     category: "clothing2",
     img: deal2,
     off: "32% OFF",
@@ -129,6 +136,7 @@ const products = [
   },
   {
     id: 7,
+    brand: "One Plus",
     category: "promotion3",
     img: deal3,
     off: "32% OFF",
@@ -148,6 +156,7 @@ const products = [
   },
   {
     id: 8,
+    brand: "Google",
     category: "promotion3",
     img: deal4,
     off: "32% OFF",
@@ -168,6 +177,7 @@ const products = [
 
   {
     id: 9,
+    brand: "Samsung",
     img: deal1,
     off: "32% OFF",
     hot: "HOT",
@@ -186,6 +196,7 @@ const products = [
   },
   {
     id: 10,
+    brand: "HP",
     img: deal2,
     off: "32% OFF",
     hot: "HOT",
@@ -203,7 +214,8 @@ const products = [
     eye: EyeIcon,
   },
   {
-    id: 12,
+    id: 11,
+    brand: "Xiaomi",
     img: deal3,
     off: "32% OFF",
     hot: "HOT",
@@ -221,7 +233,8 @@ const products = [
     eye: EyeIcon,
   },
   {
-    id: 13,
+    id: 12,
+    brand: "Panasonic",
     img: deal4,
     off: "32% OFF",
     hot: "HOT",
@@ -239,7 +252,8 @@ const products = [
     eye: EyeIcon,
   },
   {
-    id: 14,
+    id: 13,
+    brand: "Intel",
     img: deal1,
     off: "32% OFF",
     hot: "HOT",
@@ -257,7 +271,7 @@ const products = [
     eye: EyeIcon,
   },
   {
-    id: 15,
+    id: 14,
     img: deal2,
     off: "32% OFF",
     hot: "HOT",
@@ -275,7 +289,7 @@ const products = [
     eye: EyeIcon,
   },
   {
-    id: 17,
+    id: 15,
     img: deal3,
     off: "32% OFF",
     hot: "HOT",
@@ -293,7 +307,7 @@ const products = [
     eye: EyeIcon,
   },
   {
-    id: 18,
+    id: 16,
     img: deal4,
     off: "32% OFF",
     hot: "HOT",
@@ -311,7 +325,7 @@ const products = [
     eye: EyeIcon,
   },
   {
-    id: 19,
+    id: 17,
     img: deal4,
     off: "32% OFF",
     hot: "HOT",
@@ -331,12 +345,18 @@ const products = [
 ];
 
 const initialState = {
-  products: products, // All products
-  filteredProducts: products, // Products after applying filters
+  products: products,
+  filteredProducts: products,
   selectedCategory: "all",
+  selectedBrands: [],
   searchText: "",
   minPrice: 0,
   maxPrice: 1000,
+  activeFilters: {
+    category: null,
+    brands: [],
+    price: [],
+  },
 };
 
 const filterSlice = createSlice({
@@ -345,11 +365,9 @@ const filterSlice = createSlice({
   reducers: {
     setProducts: (state, action) => {
       state.products = action.payload;
-      state.filteredProducts = action.payload; // Initially, all products are shown
+      state.filteredProducts = action.payload;
     },
     setSearchText: (state, action) => {
-      console.log(state.searchText,"state");
-      
       state.searchText = action.payload;
     },
     setSelectedCategory: (state, action) => {
@@ -361,13 +379,24 @@ const filterSlice = createSlice({
     setMaxPrice: (state, action) => {
       state.maxPrice = action.payload;
     },
+    setSelectedBrands: (state, action) => {
+      state.selectedBrands = action.payload;
+    },
     applyFilters: (state) => {
-      const { products, selectedCategory, searchText, minPrice, maxPrice } =
-        state;
+      const {
+        products,
+        selectedCategory,
+        selectedBrands,
+        searchText,
+        minPrice,
+        maxPrice,
+      } = state;
 
       const isCategoryMatch = (product) =>
-        
-        selectedCategory === "all" || product.category === selectedCategory
+        selectedCategory === "all" || product.category === selectedCategory;
+
+      const isBrandMatch = (product) =>
+        selectedBrands.length === 0 || selectedBrands.includes(product.brand);
 
       const isSearchMatch = (product) =>
         product.name.toLowerCase().includes(searchText.toLowerCase());
@@ -383,9 +412,15 @@ const filterSlice = createSlice({
       state.filteredProducts = products.filter(
         (product) =>
           isCategoryMatch(product) &&
+          isBrandMatch(product) &&
           isSearchMatch(product) &&
           isPriceMatch(product)
       );
+      state.activeFilters = {
+        category: selectedCategory !== "all" ? selectedCategory : null,
+        brands: selectedBrands.length > 0 ? selectedBrands : null,
+        price: minPrice > 0 || maxPrice < 1000 ? [minPrice, maxPrice] : null,
+      };
     },
   },
 });
@@ -396,8 +431,11 @@ export const {
   setSelectedCategory,
   setMinPrice,
   setMaxPrice,
+  setSelectedBrands,
   applyFilters,
-  isSearchMatch
 } = filterSlice.actions;
+export const selectActiveFilters = (state) => state.filters.activeFilters;
+export const selectFilteredCount = (state) =>
+  state.filters.filteredProducts.length;
 
 export default filterSlice.reducer;

@@ -139,6 +139,7 @@ const Footer = () => {
             })}
           </div>
         </div>
+
         <div className="w-fit">
           <h1 className="text-white uppercase text-base font-medium ">
             Popular Tag
@@ -155,6 +156,7 @@ const Footer = () => {
             })}
           </div>
         </div>
+        
       </div>
       {/* SIGNUP  */}
       <div className="Mycontainer pb-12 md:pt-8 lg:pt-0 pt-8">
