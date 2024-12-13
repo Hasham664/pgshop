@@ -137,7 +137,7 @@ const CartSection = () => {
             placeholder="Enter promo code"
             className="w-full border border-gray-300 p-2 rounded mb-2"
           />
-          <button className="w-full bg-pink-500 text-white py-2 rounded">
+          <button className="w-full bg-pink-500 text-white py-3 rounded">
             APPLY COUPON
           </button>
         </div>
@@ -145,9 +145,9 @@ const CartSection = () => {
           <span className="text-lg font-semibold">$357.99 USD</span>
           <span>Total</span>
         </div>
-        <button className="w-full bg-blue-900 text-white py-2 rounded flex items-center justify-center">
+        <Link to={'/checkout'} className="w-full bg-smallHeader text-white py-3 rounded flex items-center justify-center">
           PROCEED TO CHECKOUT <i className="fas fa-arrow-right ml-2"></i>
-        </button>
+        </Link>
       </div>
     </div>
   );
