@@ -32,6 +32,7 @@ export default {
         buy: "rgba(53, 56, 169, 1)",
         perUnit: "rgba(250, 250, 250, 1)",
         gren: "rgba(24, 191, 124, 1)",
+        gogle: "rgba(71, 81, 86, 1)",
       },
       borderRadius: {
         "custom-190": "190px",

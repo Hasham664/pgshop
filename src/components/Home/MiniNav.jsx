@@ -72,7 +72,9 @@ const MiniNav = () => {
               <IoCartOutline className=" text-customBlue text-3xl" />
             </Link>
             <CiHeart className="text-3xl text-customBlue" />
-            <BiUser className="text-3xl text-customBlue " />
+            <Link to={"/signup"}>
+              <BiUser className="text-3xl text-customBlue " />
+            </Link>
           </div>
         </div>
       </div>

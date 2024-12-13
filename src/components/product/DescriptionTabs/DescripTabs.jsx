@@ -4,13 +4,12 @@ import AboutDescrip from "./AboutDescrip";
 import Specification from "./Specification";
 import Shipping from "./Shipping";
 import Download from "./Download";
-
 const DescripTabs = () => {
   const [activeTab, setActiveTab] = useState("About");
   return (
     <div>
       <div className="">
-        <div className=" Mycontainer pb-16 flex flex-wrap gap-6 items-center justify-between ">
+        <div className=" Mycontainer pt-20 pb-16 flex flex-wrap gap-6 items-center justify-between ">
           <div className="    flex gap-4 flex-wrap  ">
             <button
               type="button"

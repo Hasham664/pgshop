@@ -6,12 +6,12 @@ import ProducPage from "./pages/ProducPage";
 import Footer from "./components/Home/Footer";
 import CategoryPage from "./pages/CategoryPage";
 import ShopPage from "./pages/ShopPage";
+import SignUp from "./components/singup/SignUp";
 
 const App = () => {
 
   return (
     <div>
-    
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,6 +28,7 @@ const App = () => {
         {/* SHOPPAGE  */}
         <Route path="/category" element={<CategoryPage />} />
         <Route path="/shop" element={<ShopPage />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
       <Footer />
     </div>
