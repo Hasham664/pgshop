@@ -7,6 +7,7 @@ import Footer from "./components/Home/Footer";
 import CategoryPage from "./pages/CategoryPage";
 import ShopPage from "./pages/ShopPage";
 import SignUp from "./components/singup/SignUp";
+import Cart from "./pages/Cart";
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/category" element={<CategoryPage />} />
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/cart" element={<Cart/>} />
       </Routes>
       <Footer />
     </div>
