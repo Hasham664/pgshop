@@ -1,59 +1,14 @@
-import {
-  Package,
-  KeyRound,
-  CreditCard,
-  User,
-  Heart,
-  Truck,
-  ShoppingCart,
-  Store,
-  Phone,
-  Mail,
-  ChevronDown,
-} from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import React, { useState } from "react";
 
 const serviceCards = [
-  {
-    icon: Package,
-    title: "Track Order",
-  },
-  {
-    icon: KeyRound,
-    title: "Reset Password",
-  },
-  {
-    icon: CreditCard,
-    title: "Payment Option",
-  },
-  {
-    icon: User,
-    title: "User & Account",
-  },
-  {
-    icon: Heart,
-    title: "Wishlist & Compare",
-  },
-  {
-    icon: Truck,
-    title: "Shipping & Billing",
-  },
-  {
-    icon: ShoppingCart,
-    title: "Shopping Cart & Wallet",
-  },
-  {
-    icon: Store,
-    title: "Sell on Clicon",
-  },
+  { icon: "📦", title: "Track Order" },
+  { icon: "🔑", title: "Reset Password" },
+  { icon: "💳", title: "Payment Option" },
+  { icon: "👤", title: "User & Account" },
+  { icon: "❤️", title: "Wishlist & Compare" },
+  { icon: "🚚", title: "Shipping & Billing" },
+  { icon: "🛒", title: "Shopping Cart & Wallet" },
+  { icon: "🏪", title: "Sell on Clicon" },
 ];
 
 const popularTopics = [
@@ -68,33 +23,56 @@ const popularTopics = [
   "How to change my shop name?",
 ];
 
-const Contact = () => {
+const faqItems = [
+  {
+    question: "Where can I watch?",
+    answer: "Details about where you can watch.",
+  },
+  {
+    question: "How do I reset my password?",
+    answer: "Steps to reset your password.",
+  },
+  {
+    question: "What payment options are available?",
+    answer: "Information on payment options.",
+  },
+  {
+    question: "How do I track my order?",
+    answer: "Guide to track your order.",
+  },
+];
+
+const  ContactUs =() => {
+  const [activeFAQ, setActiveFAQ] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setActiveFAQ(activeFAQ === index ? null : index);
+  };
+
   return (
-    <div className="Mycontainer px-4 py-12">
+    <div className="container mx-auto px-4 py-12">
       {/* Header */}
       <h1 className="text-3xl font-bold text-center mb-12">
         What can we assist you with today?
       </h1>
 
-      {/* Service Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+      {/* Service Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
         {serviceCards.map((card, index) => (
-          <Card
+          <div
             key={index}
-            className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-2"
+            className="flex items-center gap-4 p-6 border-2 rounded-lg hover:shadow-lg transition-shadow cursor-pointer"
           >
-            <div className="flex items-center gap-4">
-              <card.icon className="h-6 w-6 text-primary" />
-              <span className="font-medium">{card.title}</span>
-            </div>
-          </Card>
+            <div className="text-2xl">{card.icon}</div>
+            <span className="font-medium">{card.title}</span>
+          </div>
         ))}
       </div>
 
       {/* Popular Topics */}
       <div className="mb-16">
         <h2 className="text-2xl font-bold text-center mb-8">Popular Topics</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {popularTopics.map((topic, index) => (
             <a
               key={index}
@@ -110,46 +88,38 @@ const Contact = () => {
       {/* Contact Section */}
       <div className="bg-gray-50 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold">Don't find your answer.</h2>
+          <h2 className="text-2xl font-bold">Don't find your answer?</h2>
           <p className="text-xl">Contact with us</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Call Us */}
-          <Card className="p-6">
-            <div className="flex flex-col items-center gap-4">
-              <div className="bg-blue-50 p-4 rounded-full">
-                <Phone className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-bold">Call us now</h3>
-              <p className="text-sm text-muted-foreground text-center">
-                we are available online from 9:00 AM to 5:00 PM (GMT+5:45) Talk
-                with us now
-              </p>
-              <p className="font-bold">+61 466 468 528</p>
-              <Button className="w-full" variant="default">
-                CALL NOW
-              </Button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="p-6 border rounded-lg text-center">
+            <div className="bg-blue-50 p-4 rounded-full inline-block mb-4">
+              📞
             </div>
-          </Card>
+            <h3 className="font-bold">Call us now</h3>
+            <p className="text-sm text-gray-500">
+              Available online from 9:00 AM to 5:00 PM (GMT+5:45)
+            </p>
+            <p className="font-bold mb-4">+61 466 468 528</p>
+            <button className="px-6 py-2 bg-blue-500 text-white rounded-lg">
+              CALL NOW
+            </button>
+          </div>
 
-          {/* Email Us */}
-          <Card className="p-6">
-            <div className="flex flex-col items-center gap-4">
-              <div className="bg-green-50 p-4 rounded-full">
-                <Mail className="h-6 w-6 text-green-600" />
-              </div>
-              <h3 className="font-bold">Email Us</h3>
-              <p className="text-sm text-muted-foreground text-center">
-                we are available online from 9:00 AM to 5:00 PM (GMT+5:45) Talk
-                with us now
-              </p>
-              <p className="font-bold">Support@clicon.com</p>
-              <Button className="w-full" variant="secondary">
-                CONTACT US
-              </Button>
+          <div className="p-6 border rounded-lg text-center">
+            <div className="bg-green-50 p-4 rounded-full inline-block mb-4">
+              📧
             </div>
-          </Card>
+            <h3 className="font-bold">Email Us</h3>
+            <p className="text-sm text-gray-500">
+              Available online from 9:00 AM to 5:00 PM (GMT+5:45)
+            </p>
+            <p className="font-bold mb-4">Support@clicon.com</p>
+            <button className="px-6 py-2 bg-green-500 text-white rounded-lg">
+              CONTACT US
+            </button>
+          </div>
         </div>
       </div>
 
@@ -158,40 +128,26 @@ const Contact = () => {
         <h2 className="text-2xl font-bold text-center mb-8">
           Frequently Asked Questions
         </h2>
-        <Accordion type="single" collapsible>
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Where can I watch?</AccordionTrigger>
-            <AccordionContent>
-              Nibh quisque suscipit fermentum netus nulla cras porttitor euismod
-              nulla. Orci, dictumst nec aliquet id ullamcorper venenatis.
-              Fermentum sulla crasper ttitor ismod nulla.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger>Where can I watch?</AccordionTrigger>
-            <AccordionContent>
-              Nibh quisque suscipit fermentum netus nulla cras porttitor euismod
-              nulla.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger>Where can I watch?</AccordionTrigger>
-            <AccordionContent>
-              Nibh quisque suscipit fermentum netus nulla cras porttitor euismod
-              nulla.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-4">
-            <AccordionTrigger>Where can I watch?</AccordionTrigger>
-            <AccordionContent>
-              Nibh quisque suscipit fermentum netus nulla cras porttitor euismod
-              nulla.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+        <div className="space-y-4">
+          {faqItems.map((item, index) => (
+            <div
+              key={index}
+              className="border rounded-lg p-4 cursor-pointer"
+              onClick={() => toggleFAQ(index)}
+            >
+              <div className="flex justify-between items-center">
+                <h3 className="font-medium">{item.question}</h3>
+                <span>{activeFAQ === index ? "−" : "+"}</span>
+              </div>
+              {activeFAQ === index && (
+                <p className="mt-2 text-gray-600">{item.answer}</p>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
-export default Contact
+export default ContactUs;

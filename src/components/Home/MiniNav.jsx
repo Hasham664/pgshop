@@ -68,7 +68,6 @@ const MiniNav = () => {
                   {totalQuantity}
                 </span>
               )}
-
               <IoCartOutline className=" text-customBlue text-3xl" />
             </Link>
             <CiHeart className="text-3xl text-customBlue" />
