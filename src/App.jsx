@@ -16,7 +16,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product/:id" element={<ProducPage />} />{" "}
+        <Route path="/product/:id" element={<ProducPage />} />
         {/* Product details page */}
         {/* Other routes */}
         <Route path="/Promotional" element={<div>Promotional Page</div>} />
@@ -30,7 +30,7 @@ const App = () => {
         <Route path="/category" element={<CategoryPage />} />
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/contact" element={ <ContactUs/> } />
+        <Route path="/contact" element={ <ContactUs/>  } />
       </Routes>
       <Footer />
     </div>
