@@ -8,7 +8,6 @@ import CategoryPage from "./pages/CategoryPage";
 import ShopPage from "./pages/ShopPage";
 import SignUp from "./components/singup/SignUp";
 import ContactUs from "./components/contactus/ContactUs";
-
 const App = () => {
 
   return (
