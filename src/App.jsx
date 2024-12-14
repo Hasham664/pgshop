@@ -9,6 +9,7 @@ import ShopPage from "./pages/ShopPage";
 import SignUp from "./components/singup/SignUp";
 import Cart from "./pages/Cart";
 import CheckOutPage from "./pages/CheckOutPage";
+import Contact from './components/contactus/ContactUs'
 
 const App = () => {
 
@@ -32,7 +33,8 @@ const App = () => {
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={ <CheckOutPage/> } />
+        <Route path="/checkout" element={<CheckOutPage />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </div>
