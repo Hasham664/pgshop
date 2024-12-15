@@ -33,6 +33,9 @@ export default {
         perUnit: "rgba(250, 250, 250, 1)",
         gren: "rgba(24, 191, 124, 1)",
         gogle: "rgba(71, 81, 86, 1)",
+        hoverColor: "rgba(0, 103, 170, 1)",
+        phoneHover: "rgba(234, 246, 254, 1)",
+        pink: "rgba(255, 49, 126, 1)",
       },
       borderRadius: {
         "custom-190": "190px",

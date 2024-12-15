@@ -7,7 +7,7 @@ import Footer from "./components/Home/Footer";
 import CategoryPage from "./pages/CategoryPage";
 import ShopPage from "./pages/ShopPage";
 import SignUp from "./components/singup/SignUp";
-import ContactUs from "./components/contactus/ContactUs";
+import ContactPage from "./pages/ContactPage";
 const App = () => {
 
   return (
@@ -29,7 +29,7 @@ const App = () => {
         <Route path="/category" element={<CategoryPage />} />
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/contact" element={ <ContactUs/>  } />
+        <Route path="/contact" element={ <ContactPage/>  } />
       </Routes>
       <Footer />
     </div>
