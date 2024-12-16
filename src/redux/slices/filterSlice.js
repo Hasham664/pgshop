@@ -23,7 +23,7 @@ const products = [
     hot: "HOT",
     name: "Custom Shirts & Tops1",
     code: "Code: CB009",
-    price: "From $1.78 to $5.25",
+    price: " $1.78 to $5.25",
     stock: "50 Minimum",
     icon: CursorIcon,
     free: "Free Delivery",

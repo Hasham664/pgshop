@@ -151,7 +151,6 @@ const ProductDetails = () => {
       </p>
     );
   }
-
   return (
     <div className="Mycontainer ">
      

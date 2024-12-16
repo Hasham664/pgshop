@@ -226,7 +226,7 @@ const AllProducts = ({ activeTab }) => {
                   </p>
                   <div
                     onClick={() => {
-                      handleAddToCart(product.id);
+                      handleAddToCart(product);
                     }}
                     className="flex items-center rounded-sm gap-1 px-2  py-3 bg-smallHeader text-white w-full justify-center cursor-pointer"
                   >

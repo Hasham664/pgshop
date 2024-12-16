@@ -36,6 +36,7 @@ export default {
         hoverColor: "rgba(0, 103, 170, 1)",
         phoneHover: "rgba(234, 246, 254, 1)",
         pink: "rgba(255, 49, 126, 1)",
+        drag: "rgba(242, 242, 242, 1)",
       },
       borderRadius: {
         "custom-190": "190px",

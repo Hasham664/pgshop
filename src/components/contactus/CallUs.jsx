@@ -14,6 +14,7 @@ const CallUs = () => {
         buttonText: "CALL NOW",
         buttonColor: "bg-smallHeader",
         arrow: <IoArrowForwardOutline />,
+        buttonWidth: "w-36",
       },
       {
         id: 2,
@@ -24,6 +25,7 @@ const CallUs = () => {
         buttonText: "CONTACT US",
         buttonColor: "bg-pink",
         arrow: <IoArrowForwardOutline />,
+        buttonWidth: "w-44",
       },
     ];
   return (
@@ -39,7 +41,7 @@ const CallUs = () => {
           {contactOptions.map((option) => (
             <div
               key={option.id}
-              className=" flex items-start p-6 border bg-white rounded-md "
+              className=" flex flex-wrap lg:flex-nowrap md:flex-nowrap sm:flex-nowrap items-start p-6 border bg-white rounded-md "
             >
               <div
                 className={`p-4  inline-block text-4xl  ${
@@ -48,16 +50,16 @@ const CallUs = () => {
               >
                 {option.icon}
               </div>
-              <div className="px-5">
+              <div className="lg:px-5 md:px-5 sm:px-5 px-0 pt-2 lg:pt-0 md:pt-0 sm:pt-0">
                 <h3 className="font-bold">{option.title}</h3>
                 <p className="text-sm text-gray-500 mb-2">
                   {option.description}
                 </p>
-                <p className="font-bold mb-4">{option.contactInfo}</p>
+                <p className="font-bold mb-5">{option.contactInfo}</p>
                 <div
-                  className={` w-44  flex items-center gap-2 justify-center px-6 py-2 text-white rounded-sm ${option.buttonColor}`}
+                  className={`text-left flex items-center gap-2 justify-center py-2.5 text-white rounded-sm ${option.buttonColor} ${option.buttonWidth}`}
                 >
-                  <button className={``}>{option.buttonText}</button>
+                  <button className="">{option.buttonText}</button>
                   <p>{option.arrow}</p>
                 </div>
               </div>
