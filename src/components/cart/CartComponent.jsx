@@ -213,7 +213,7 @@ const CartComponent = () => {
           </div>
           <div className="flex  justify-between font-bold text-lg mt-8">
             <span className="text-brand font-semibold">
-              ${(totalAmount + 61.99 - 24).toFixed(2)}
+              ${totalAmount}
             </span>
             <span className="text-brand font-normal">Total:</span>
           </div>

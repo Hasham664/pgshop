@@ -37,6 +37,7 @@ export default {
         phoneHover: "rgba(234, 246, 254, 1)",
         pink: "rgba(255, 49, 126, 1)",
         drag: "rgba(242, 242, 242, 1)",
+        textarea: "rgba(228, 231, 233, 1)",
       },
       borderRadius: {
         "custom-190": "190px",

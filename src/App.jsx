@@ -9,6 +9,8 @@ import ShopPage from "./pages/ShopPage";
 import SignUp from "./components/singup/SignUp";
 import ContactPage from "./pages/ContactPage";
 import Cart from "./pages/Cart";
+import Checkout from "./components/checkout/Checkout";
+import CheckoutPage from "./pages/CheckoutPage";
 const App = () => {
 
   return (
@@ -30,9 +32,10 @@ const App = () => {
         <Route path="/category" element={<CategoryPage />} />
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/cart" element={ <Cart/> } />
+        <Route path="/cart" element={<Cart />} />
 
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/checkout" element={ <CheckoutPage/> } />
       </Routes>
       <Footer />
     </div>
